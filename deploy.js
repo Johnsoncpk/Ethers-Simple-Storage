@@ -1,5 +1,13 @@
-async function main() {
+const ethers = require("ethers");
+require('dotenv').config()
 
+async function main() {
+    // http://127.0.0.1:7545
+    const provider = new ethers.providers.JsonRpcProvider(process.env.LocalProvider);
+    const wallet = new ethers.Wallet(
+        process.env.PrivateKey,
+        provider
+    );
 }
 
 main()
